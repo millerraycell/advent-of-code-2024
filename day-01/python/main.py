@@ -12,7 +12,7 @@ def parse_inputs() -> tuple[list, list]:
 
     return first_list, second_list
 
-def calculate_difference(data: tuple[list, list]) -> int:
+def calculate_difference(data: tuple[list, list]) -> None:
     sum = 0
 
     for i in range(0, len(data[0])):
@@ -20,5 +20,15 @@ def calculate_difference(data: tuple[list, list]) -> int:
     
     print("Total difference is: {}".format(sum))
 
+def calculate_similarity(data: tuple[list, list]) -> None:
+    sum = 0
+
+    for i in range(0, len(data[0])):
+        sum += data[0][i] * data[1].count(data[0][i])
+    
+    print("Similarity is: {}".format(sum))
+
+
 if __name__ == '__main__':
     calculate_difference(parse_inputs())
+    calculate_similarity(parse_inputs())
